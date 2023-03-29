@@ -1,0 +1,151 @@
+body{
+    background-color: #212F45;
+    margin: 1vw;
+}
+
+.konténerFej{
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+}
+
+.feliratDiv{
+    display: flex;
+    align-items: center;
+}
+
+.felirat{
+    font-size: 4vw;
+    margin: 1.2vw auto;
+    background: #212F45;
+    box-shadow: inset 0 0 3vw #971857, 0 0 3vw #971857;
+    border: 0.4vw solid #971857;
+    width: 20vw;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    color: #971857;
+}
+
+.felirat::after{
+    position: absolute;
+    content:"";
+    background-color: #971857;
+    top: 5vw;
+    right: 0.001px;
+    width: 20vw;
+    max-width: 25vw;
+    height: 3vw;
+    transform:  perspective(5vw) rotateX(40deg);
+    filter: blur(1vw);
+}
+
+.érmeDiv{
+    padding: 0.8vw;
+}
+
+#Pengő{
+    width: 15vw;
+    transition: 400ms scale;
+    animation: pörgés 20s infinite linear;
+    cursor:pointer;
+}
+
+@keyframes pörgés {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{transform: rotate(180deg);}
+    75%{transform: rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
+
+#Pengő:hover{
+    scale: 120%;
+}
+
+#Pénz{
+    position: absolute;
+    top: 2vw;
+    margin: auto;
+    width: 40rem;
+    font-size: 5rem;
+    background: #212F45;
+    box-shadow: inset 0 0 3vw #6021a8, 0 0 3vw #6021a8;
+    border: 0.4vw solid #6021a8;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    color: #6021a8;
+}
+
+#Pénz::after{
+    position: absolute;
+    content:"";
+    background-color: #6021a8;
+    top: 7rem;
+    right: 0.001px;
+    width: 40rem;
+    height: 3vw;
+    transform:  perspective(10rem) rotateX(40deg);
+    filter: blur(1vw);
+}
+
+.konténerTörzs{
+    position: relative;
+    top: 10vw;
+    display: grid;
+    height: 37.5vw;
+    grid-template-columns:repeat(3, 3fr);
+    grid-template-rows:repeat(5, 4fr) ;
+    grid-template-areas:'1 fej 2'
+                        '3 fej 4'
+                        '5 fej 6'
+                        '7 umszki 8'
+                        'vég vég vég' ;
+    gap: 1vw;
+}
+
+.gomb{
+    background-color: white;
+    text-align: center;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+#leírás{
+    display: flex;
+    flex-direction: column;
+    background-color: greenyellow;
+    grid-area: 1/2/4/3;
+    font-family: 'Roboto Mono', serif;
+    text-align: center;
+    justify-content: space-between;
+}
+
+#cím{
+    font-size: 1.5rem
+}
+#ár{
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.umszki-1{
+    grid-area: 4/2/5/3;
+}
+
+#UMSZKI{
+    height: 6.5vw;
+    margin: 0 40%;
+}
+
+#vég{
+    cursor: pointer;
+    grid-area: 5/1/6/4;
+    background-color: gray;
+    text-align: center;
+    vertical-align: middle;
+    font-size: xx-large;
+    display: flex;
+    justify-content: space-evenly;
+}
